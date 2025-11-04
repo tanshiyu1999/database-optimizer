@@ -1,0 +1,72 @@
+# .gitignore for database-optimizer
+# Generated to cover common Go, Docker, macOS, and editor artefacts
+
+# macOS
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+*.iml
+*.code-workspace
+
+# Node (if any frontend appears)
+node_modules/
+
+# Go build outputs
+bin/
+pkg/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.out
+
+# Go profiling / pprof
+*.pprof
+profile.out
+
+# Optional vendor directory (uncomment if you vendor dependencies locally)
+# /vendor/
+
+# Build directories
+/build/
+/dist/
+
+# Logs, databases, and runtime files
+*.log
+*.sql
+*.sqlite
+*.db
+*.db-journal
+*.sqlite3
+
+# Environment files
+.env
+.env.*
+.env.local
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Temporary files
+tmp/
+temp/
+*.swp
+*.swo
+Thumbs.db
+
+# IDE/editor swap, history
+*.history
+
+# Coverage and test reports
+coverage/
+test-results/
+
+# Misc
+dist/
+build/
+
