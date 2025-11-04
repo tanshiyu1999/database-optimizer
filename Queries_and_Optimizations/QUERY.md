@@ -1,7 +1,7 @@
 ## Filtering Overhead
 ```
 optimized-db=# EXPLAIN Analyze SELECT * FROM fire_calls where City = 'SF';
-                                                    QUERY PLAN                                                 
+                                                    QUERY PLAN                                                  
 --------------------------------------------------------------------------------------------------------------------
  Seq Scan on fire_calls  (cost=0.00..8718.20 rows=120317 width=261) (actual time=0.098..53.212 rows=120072 loops=1)
    Filter: ((city)::text = 'SF'::text)
@@ -11,7 +11,7 @@ optimized-db=# EXPLAIN Analyze SELECT * FROM fire_calls where City = 'SF';
 (5 rows)
 
 optimized-db=# EXPLAIN Analyze SELECT * FROM fire_calls;
-                                                     QUERY PLAN                                                   
+                                                     QUERY PLAN                                                    
 --------------------------------------------------------------------------------------------------------------------
  Seq Scan on fire_calls  (cost=0.00..8279.96 rows=175296 width=261) (actual time=0.022..19.618 rows=175296 loops=1)
  Planning Time: 0.143 ms
@@ -24,7 +24,7 @@ optimized-db=# EXPLAIN Analyze SELECT * FROM fire_calls;
 ## Index vs No Index Performance and EXPLAIN Output
 ```
 optimized-db=# EXPLAIN ANALYZE SELECT * FROM fire_calls WHERE call_type = 'Medical Incident';
-                                                     QUERY PLAN                                                   
+                                                     QUERY PLAN                                                    
 --------------------------------------------------------------------------------------------------------------------
  Seq Scan on fire_calls  (cost=0.00..8718.20 rows=114065 width=261) (actual time=0.047..65.169 rows=113794 loops=1)
    Filter: ((call_type)::text = 'Medical Incident'::text)
